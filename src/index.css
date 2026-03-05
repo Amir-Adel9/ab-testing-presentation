@@ -1,0 +1,40 @@
+:root {
+  --creiden-blue: #00539f;
+  --creiden-dark: #36454f;
+  --creiden-yellow: #ffcc32;
+  --creiden-light-blue: #00c0f3;
+  --creiden-teal: #007484;
+  --creiden-orange: #fe6625;
+  --creiden-beige: #e4dcca;
+  --creiden-magenta: #bd1a8d;
+  --creiden-green: #00b27d;
+  --creiden-black: #000000;
+  --creiden-white: #ffffff;
+
+  --slide-bg: #ffffff;
+  --text-primary: #1a1a2e;
+  --text-secondary: #36454f;
+  --text-muted: #6b7b8d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Poppins', 'Verdana', sans-serif;
+  background: #0a0a14;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--creiden-blue);
+  color: white;
+}

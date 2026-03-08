@@ -56,17 +56,20 @@ const Slide1: FC = () => (
 const Slide2: FC = () => (
   <div className="slide">
     <ChevronDeco className="top-right" />
-    <div className="slide-badge">The Challenge</div>
-    <h2>Opinion-Driven <span className="accent">Decisions</span></h2>
+    <div className="slide-badge">The Problem</div>
+    <h2>How do we know a change is <span className="accent">actually better</span>?</h2>
     <div className="section-line" />
+    <p style={{ marginBottom: 8, opacity: 0, animation: 'fadeUp 0.5s 0.25s forwards', maxWidth: 640 }}>
+      We build and ship constantly — but without measurement, we're guessing whether our work actually moves the needle.
+    </p>
     <div className="bullet-list">
       <div className="bullet-item">
         <div className="bullet-icon">
-          <Icon d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          <Icon d="M13 17l5-5-5-5M6 17l5-5-5-5" />
         </div>
         <div className="bullet-text">
-          <strong>Decisions driven by opinions</strong><br/>
-          Teams ship features based on the loudest voice, gut feeling, or HiPPO (highest paid person's opinion).
+          <strong>Continuous delivery</strong><br/>
+          We frequently ship new features and improvements for clients.
         </div>
       </div>
       <div className="bullet-item">
@@ -74,18 +77,26 @@ const Slide2: FC = () => (
           <Icon d="M12 9v2m0 4h.01M5.07 19H19a2 2 0 0 0 1.75-2.97L13.04 4.18a2 2 0 0 0-3.5 0L1.68 16.03A2 2 0 0 0 3.43 19z" />
         </div>
         <div className="bullet-text">
-          <strong>No way to measure impact</strong><br/>
-          Without controlled experiments, we cannot know which version actually improves user outcomes.
+          <strong>Unclear impact</strong><br/>
+          It is not always clear whether a change actually improves user behavior or outcomes.
         </div>
       </div>
       <div className="bullet-item">
-        <div className="bullet-icon" style={{ background: 'rgba(0,178,125,0.1)', color: 'var(--creiden-green)' }}>
-          <Icon d="M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4 12 14.01l-3-3" />
+        <div className="bullet-icon" style={{ background: 'rgba(0,83,159,0.1)', color: 'var(--creiden-blue)' }}>
+          <Icon d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
         </div>
         <div className="bullet-text">
-          <strong>We need a reliable signal</strong><br/>
-          A repeatable method to measure real user impact before committing to a full rollout.
+          <strong>Decisions driven by opinion</strong><br/>
+          Without data, teams default to gut feeling, the loudest voice, or the highest-paid person's opinion.
         </div>
+      </div>
+    </div>
+    <div className="problem-callout" style={{ marginTop: 'auto', padding: '18px 28px', background: 'rgba(0,178,125,0.08)', borderRadius: 12, borderLeft: '4px solid var(--creiden-green)', display: 'flex', alignItems: 'center', gap: 14, opacity: 0, animation: 'fadeUp 0.5s 0.7s forwards' }}>
+      <div style={{ flexShrink: 0, width: 36, height: 36, borderRadius: 10, background: 'var(--creiden-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4 12 14.01l-3-3" /></svg>
+      </div>
+      <div style={{ fontSize: 16, fontWeight: 600, color: 'var(--text-primary)' }}>
+        We need data from real users to validate that changes are truly better.
       </div>
     </div>
   </div>
@@ -100,27 +111,36 @@ const Slide3: FC = () => (
     <div className="slide-badge">Core Concept</div>
     <h2>What is <span className="accent">A/B Testing</span>?</h2>
     <div className="section-line" />
-    <p style={{ marginTop: 4, opacity: 0, animation: 'fadeUp 0.5s 0.25s forwards', maxWidth: 640 }}>
-      A controlled experiment where users are <strong>randomly split</strong> into groups, each experiencing a different version of the product. Results are compared using measurable metrics.
-    </p>
-    <div className="bullet-list" style={{ marginTop: 28 }}>
+    <div className="bullet-list">
       <div className="bullet-item">
         <div className="bullet-icon">
-          <Icon d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+          <Icon d="M9.5 14.5L3 21M14.5 9.5L21 3M14.828 9.172a4 4 0 0 1 0 5.656M9.172 14.828a4 4 0 0 1 0-5.656" />
         </div>
-        <div className="bullet-text"><strong>Split users into groups</strong> — randomly assign users to Group A or Group B (or more).</div>
+        <div className="bullet-text">A controlled experiment used to evaluate product or feature changes</div>
       </div>
       <div className="bullet-item">
         <div className="bullet-icon" style={{ background: 'rgba(0,192,243,0.1)', color: 'var(--creiden-light-blue)' }}>
+          <Icon d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+        </div>
+        <div className="bullet-text">Users are randomly divided into multiple groups</div>
+      </div>
+      <div className="bullet-item">
+        <div className="bullet-icon" style={{ background: 'rgba(254,102,37,0.1)', color: 'var(--creiden-orange)' }}>
           <Icon d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zM12 4v16M2 12h20" />
         </div>
-        <div className="bullet-text"><strong>Each group sees a different variant</strong> — different UI, logic, copy, or flow.</div>
+        <div className="bullet-text">Each group is exposed to a different version of the same feature or experience</div>
       </div>
       <div className="bullet-item">
         <div className="bullet-icon" style={{ background: 'rgba(0,178,125,0.1)', color: 'var(--creiden-green)' }}>
           <Icon d="M18 20V10M12 20V4M6 20v-6" />
         </div>
-        <div className="bullet-text"><strong>Compare using metrics</strong> — conversion, engagement, latency, revenue.</div>
+        <div className="bullet-text">The performance of each version is measured using predefined metrics</div>
+      </div>
+      <div className="bullet-item">
+        <div className="bullet-icon" style={{ background: 'rgba(0,83,159,0.1)', color: 'var(--creiden-blue)' }}>
+          <Icon d="M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4 12 14.01l-3-3" />
+        </div>
+        <div className="bullet-text">The version that performs better is used to guide decisions</div>
       </div>
     </div>
   </div>
@@ -189,38 +209,69 @@ const Slide4: FC = () => (
 )
 
 /* ──────────────────────────────────────────
-   SLIDE 5 – Common Use Cases
+   SLIDE 5 – What Can We A/B Test?
    ────────────────────────────────────────── */
 const Slide5: FC = () => (
   <div className="slide">
     <ChevronDeco className="top-right" />
     <div className="slide-badge">Applications</div>
-    <h2>Common <span className="accent">Use Cases</span></h2>
+    <h2>What Can We <span className="accent">A/B Test</span>?</h2>
     <div className="section-line" />
-    <div className="cards-grid cols-3" style={{ marginTop: 20 }}>
-      <div className="card">
-        <h3>UI Changes</h3>
-        <ul><li>Button styles &amp; copy</li><li>Page layouts</li><li>Navigation redesigns</li></ul>
+    <div className="icon-cards cols-3">
+      <div className="icon-card">
+        <div className="icon-card-header">
+          <div className="icon-card-icon" style={{ background: 'var(--creiden-blue)' }}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18M9 21V9" /></svg>
+          </div>
+          <div className="icon-card-title">User Interface</div>
+        </div>
+        <div className="icon-card-body">
+          <ul><li>Page layouts &amp; component placement</li><li>Button styles, labels &amp; CTAs</li><li>Navigation structure &amp; menus</li></ul>
+        </div>
       </div>
-      <div className="card" style={{ borderLeftColor: 'var(--creiden-green)' }}>
-        <h3>Product Features</h3>
-        <ul><li>New functionality</li><li>Pricing models</li><li>Content strategies</li></ul>
+      <div className="icon-card">
+        <div className="icon-card-header">
+          <div className="icon-card-icon" style={{ background: 'var(--creiden-green)' }}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+          </div>
+          <div className="icon-card-title">User Experience Flows</div>
+        </div>
+        <div className="icon-card-body">
+          <ul><li>Signup &amp; registration steps</li><li>Onboarding sequences</li><li>Checkout &amp; payment flows</li></ul>
+        </div>
       </div>
-      <div className="card" style={{ borderLeftColor: 'var(--creiden-light-blue)' }}>
-        <h3>Algorithms</h3>
-        <ul><li>Recommendation engines</li><li>Search ranking</li><li>ML model versions</li></ul>
+      <div className="icon-card">
+        <div className="icon-card-header">
+          <div className="icon-card-icon" style={{ background: 'var(--creiden-light-blue)' }}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+          </div>
+          <div className="icon-card-title">Feature Behavior</div>
+        </div>
+        <div className="icon-card-body">
+          <ul><li>Feature configuration &amp; defaults</li><li>Business rule variations</li><li>Conditional logic &amp; gating</li></ul>
+        </div>
       </div>
-      <div className="card" style={{ borderLeftColor: 'var(--creiden-teal)' }}>
-        <h3>Performance</h3>
-        <ul><li>Caching strategies</li><li>CDN configs</li><li>Bundle optimizations</li></ul>
+      <div className="icon-card">
+        <div className="icon-card-header">
+          <div className="icon-card-icon" style={{ background: 'var(--creiden-orange)' }}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9.5 14.5L3 21M14.5 9.5L21 3" /><path d="M14.828 9.172a4 4 0 0 1 0 5.656M9.172 14.828a4 4 0 0 1 0-5.656" /></svg>
+          </div>
+          <div className="icon-card-title">Algorithms &amp; Logic</div>
+        </div>
+        <div className="icon-card-body">
+          <ul><li>Recommendation &amp; ranking engines</li><li>Search relevance tuning</li><li>ML model versions &amp; thresholds</li></ul>
+        </div>
       </div>
-      <div className="card" style={{ borderLeftColor: 'var(--creiden-orange)' }}>
-        <h3>Onboarding</h3>
-        <ul><li>Sign-up flows</li><li>Tutorial variants</li><li>Welcome experiences</li></ul>
-      </div>
-      <div className="card" style={{ borderLeftColor: 'var(--creiden-magenta)' }}>
-        <h3>Messaging</h3>
-        <ul><li>Email subject lines</li><li>Push notifications</li><li>In-app prompts</li></ul>
+      <div className="icon-card">
+        <div className="icon-card-header">
+          <div className="icon-card-icon" style={{ background: 'var(--creiden-teal)' }}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
+          </div>
+          <div className="icon-card-title">Performance</div>
+        </div>
+        <div className="icon-card-body">
+          <ul><li>Caching &amp; loading strategies</li><li>Infrastructure optimizations</li><li>Bundle size &amp; delivery methods</li></ul>
+        </div>
       </div>
     </div>
   </div>
@@ -235,33 +286,69 @@ const Slide6: FC = () => (
     <div className="slide-badge">Measurement</div>
     <h2>Metrics That <span className="accent">Matter</span></h2>
     <div className="section-line" />
-    <p style={{ marginBottom: 20, opacity: 0, animation: 'fadeUp 0.5s 0.25s forwards' }}>
-      Experiments are only useful if we define what <strong>"better"</strong> means.
+    <p style={{ marginBottom: 8, opacity: 0, animation: 'fadeUp 0.5s 0.25s forwards' }}>
+      Experiments require clear, <strong>measurable success metrics</strong> to determine which variant wins.
     </p>
-    <div className="cards-grid cols-3">
-      <div className="card">
-        <h3>Acquisition &amp; Conversion</h3>
-        <ul>
-          <li>Sign-up rate</li>
-          <li>Checkout completion</li>
-          <li>Click-through rate</li>
-        </ul>
+    <div className="icon-cards cols-2">
+      <div className="icon-card">
+        <div className="icon-card-header">
+          <div className="icon-card-icon" style={{ background: 'var(--creiden-blue)' }}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><path d="M22 4 12 14.01l-3-3" /></svg>
+          </div>
+          <div className="icon-card-title">Conversion &amp; Acquisition</div>
+        </div>
+        <div className="icon-card-body">
+          <ul>
+            <li><strong>Conversion rate</strong> — % of users completing a target action</li>
+            <li><strong>Click-through rate</strong> — % of users clicking a specific element</li>
+            <li><strong>Funnel completion</strong> — how far users progress through a flow</li>
+          </ul>
+        </div>
       </div>
-      <div className="card" style={{ borderLeftColor: 'var(--creiden-green)' }}>
-        <h3>Engagement &amp; Retention</h3>
-        <ul>
-          <li>DAU / WAU</li>
-          <li>Session length</li>
-          <li>Feature usage &amp; churn</li>
-        </ul>
+      <div className="icon-card">
+        <div className="icon-card-header">
+          <div className="icon-card-icon" style={{ background: 'var(--creiden-green)' }}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+          </div>
+          <div className="icon-card-title">Engagement &amp; Retention</div>
+        </div>
+        <div className="icon-card-body">
+          <ul>
+            <li><strong>Session duration</strong> — time users spend actively in the product</li>
+            <li><strong>Return rate</strong> — how often users come back over days or weeks</li>
+            <li><strong>Feature adoption</strong> — % of users engaging with a specific feature</li>
+          </ul>
+        </div>
       </div>
-      <div className="card" style={{ borderLeftColor: 'var(--creiden-teal)' }}>
-        <h3>Business &amp; Performance</h3>
-        <ul>
-          <li>Revenue per user</li>
-          <li>Latency (p50/p99)</li>
-          <li>Error rate</li>
-        </ul>
+      <div className="icon-card">
+        <div className="icon-card-header">
+          <div className="icon-card-icon" style={{ background: 'var(--creiden-orange)' }}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
+          </div>
+          <div className="icon-card-title">Revenue &amp; Business</div>
+        </div>
+        <div className="icon-card-body">
+          <ul>
+            <li><strong>Revenue per user</strong> — average income generated per active user</li>
+            <li><strong>Order value</strong> — average transaction or purchase size</li>
+            <li><strong>LTV impact</strong> — projected shift in customer lifetime value</li>
+          </ul>
+        </div>
+      </div>
+      <div className="icon-card">
+        <div className="icon-card-header">
+          <div className="icon-card-icon" style={{ background: 'var(--creiden-teal)' }}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
+          </div>
+          <div className="icon-card-title">Technical &amp; Performance</div>
+        </div>
+        <div className="icon-card-body">
+          <ul>
+            <li><strong>Latency (p50 / p99)</strong> — response time at median and tail</li>
+            <li><strong>Error rate</strong> — % of requests resulting in failures</li>
+            <li><strong>Load time</strong> — how fast pages render for the end user</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -553,7 +640,35 @@ const Slide12: FC = () => (
   </div>
 )
 
+/* ──────────────────────────────────────────
+   SLIDE 13 – Thank You
+   ────────────────────────────────────────── */
+const Slide13: FC = () => (
+  <div className="slide slide-title" style={{ background: 'linear-gradient(160deg, #ffffff 0%, #f0f5fa 100%)' }}>
+    <ChevronDeco className="top-right" />
+    <ChevronDeco className="bottom-left" />
+    <div className="logo-mark">
+      <svg width="56" height="56" viewBox="0 0 56 56">
+        <rect width="56" height="56" rx="14" fill="#00539f" />
+        <text x="28" y="37" textAnchor="middle" fontFamily="Poppins, sans-serif" fontWeight="700" fontSize="28" fill="white">C</text>
+      </svg>
+    </div>
+    <h1>Thank <span className="accent">You</span></h1>
+    <p className="subtitle">Questions &amp; Discussion</p>
+    <div className="presenter" style={{ marginTop: 24 }}>
+      <strong>Amir Adel</strong> &middot; Creiden
+    </div>
+    <svg style={{ position: 'absolute', bottom: 40, opacity: 0.06, left: '50%', transform: 'translateX(-50%)' }} width="400" height="60" viewBox="0 0 400 60">
+      <rect x="0" y="10" width="180" height="40" rx="8" fill="#00539f" />
+      <text x="90" y="36" textAnchor="middle" fill="white" fontSize="13" fontWeight="600" fontFamily="Poppins">Variant A</text>
+      <rect x="220" y="10" width="180" height="40" rx="8" fill="#00b27d" />
+      <text x="310" y="36" textAnchor="middle" fill="white" fontSize="13" fontWeight="600" fontFamily="Poppins">Variant B</text>
+      <line x1="190" y1="30" x2="210" y2="30" stroke="#36454f" strokeWidth="2" strokeDasharray="4 3" />
+    </svg>
+  </div>
+)
+
 export const slides: FC[] = [
-  Slide1, Slide2, Slide3, Slide4, Slide5, Slide6,
-  Slide7, Slide8, Slide9, Slide10, Slide11, Slide12,
+  Slide2, Slide1, Slide3, Slide4, Slide5, Slide6,
+  Slide7, Slide8, Slide9, Slide10, Slide11, Slide12, Slide13,
 ]
